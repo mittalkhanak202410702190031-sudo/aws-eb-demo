@@ -1,0 +1,3 @@
+node_modules
+.elasticbeanstalk/*.cfg.yml
+.elasticbeanstalk/*.global.yml

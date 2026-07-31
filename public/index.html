@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS Elastic Beanstalk LPU</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🚀 AWS Elastic Beanstalk</h1>
+
+<h2>Node.js + Express Deployment</h2>
+
+<p>
+This application has been successfully deployed using
+AWS Elastic Beanstalk.
+</p>
+
+<div class="cards">
+
+<div class="card">
+<h3>☁ AWS</h3>
+<p>Cloud Platform</p>
+</div>
+
+<div class="card">
+<h3>🟢 Node.js</h3>
+<p>Backend Runtime</p>
+</div>
+
+<div class="card">
+<h3>⚡ Express</h3>
+<p>Web Framework</p>
+</div>
+
+</div>
+
+<button onclick="loadInfo()">
+Show Deployment Details
+</button>
+
+<div id="result"></div>
+
+</div>
+
+<script>
+
+async function loadInfo(){
+
+const response=await fetch("/api/info");
+
+const data=await response.json();
+
+document.getElementById("result").innerHTML=`
+
+<h3>Application : ${data.app}</h3>
+
+<p>Status : ${data.status}</p>
+
+<p>Platform : ${data.platform}</p>
+
+<p>Framework : ${data.framework}</p>
+
+`;
+
+}
+
+</script>
+
+</body>
+</html>
