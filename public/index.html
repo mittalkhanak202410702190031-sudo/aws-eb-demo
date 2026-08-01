@@ -1,76 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AWS Elastic Beanstalk LPU</title>
-
+    <title>AWS Elastic Beanstalk Deployment</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="container">
+    <div class="container">
 
-<h1>🚀 AWS Elastic Beanstalk</h1>
+        <div class="hero">
 
-<h2>Node.js + Express Deployment</h2>
+            <span class="badge">🚀 Successfully Deployed</span>
 
-<p>
-This application has been successfully deployed using
-AWS Elastic Beanstalk.
-</p>
+            <h1>
+                AWS <span>Elastic Beanstalk</span>
+            </h1>
 
-<div class="cards">
+            <p class="subtitle">
+                A modern Node.js + Express application deployed on
+                <strong>AWS Elastic Beanstalk</strong>.
+            </p>
 
-<div class="card">
-<h3>☁ AWS</h3>
-<p>Cloud Platform</p>
-</div>
+        </div>
 
-<div class="card">
-<h3>🟢 Node.js</h3>
-<p>Backend Runtime</p>
-</div>
+        <div class="cards">
 
-<div class="card">
-<h3>⚡ Express</h3>
-<p>Web Framework</p>
-</div>
+            <div class="card">
+                <div class="icon">☁️</div>
+                <h3>AWS Cloud</h3>
+                <p>Reliable cloud infrastructure for hosting applications.</p>
+            </div>
 
-</div>
+            <div class="card">
+                <div class="icon">🟢</div>
+                <h3>Node.js</h3>
+                <p>Fast and scalable JavaScript runtime environment.</p>
+            </div>
 
-<button onclick="loadInfo()">
-Show Deployment Details
-</button>
+            <div class="card">
+                <div class="icon">⚡</div>
+                <h3>Express.js</h3>
+                <p>Minimal and flexible web framework for Node.js.</p>
+            </div>
 
-<div id="result"></div>
+        </div>
 
-</div>
+        <button onclick="loadInfo()">
+            📄 View Deployment Details
+        </button>
 
-<script>
+        <div id="result" class="result"></div>
 
-async function loadInfo(){
+    </div>
 
-const response=await fetch("/api/info");
+    <script>
+        async function loadInfo() {
 
-const data=await response.json();
+            const response = await fetch("/api/info");
+            const data = await response.json();
 
-document.getElementById("result").innerHTML=`
+            document.getElementById("result").innerHTML = `
+                <div class="info-card">
+                    <h2>Deployment Information</h2>
 
-<h3>Application : ${data.app}</h3>
-
-<p>Status : ${data.status}</p>
-
-<p>Platform : ${data.platform}</p>
-
-<p>Framework : ${data.framework}</p>
-
-`;
-
-}
-
-</script>
+                    <p><strong>Application:</strong> ${data.app}</p>
+                    <p><strong>Status:</strong> <span class="success">${data.status}</span></p>
+                    <p><strong>Platform:</strong> ${data.platform}</p>
+                    <p><strong>Framework:</strong> ${data.framework}</p>
+                </div>
+            `;
+        }
+    </script>
 
 </body>
+
 </html>
