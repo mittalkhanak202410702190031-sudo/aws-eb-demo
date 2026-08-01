@@ -4,7 +4,7 @@ const path = require("path");
 const app = express();
 
 const PORT = process.env.PORT || 3000;
-const APP_NAME = process.env.APP_NAME || "AWS Elastic Beanstalk Demo";
+const APP_NAME = process.env.APP_NAME || "AWS Elastic Beanstalk LPU DEMO";
 
 app.use(express.static(path.join(__dirname, "public")));
 
